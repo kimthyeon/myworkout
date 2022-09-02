@@ -1,3 +1,4 @@
+# 공지사항 데이터
 INSERT INTO `myworkout`.`notice` (`nt_title`, `nt_content`) VALUES ('1공지사항', '1내용');
 INSERT INTO `myworkout`.`notice` (`nt_title`, `nt_content`) VALUES ('2공지사항', '2내용');
 INSERT INTO `myworkout`.`notice` (`nt_title`, `nt_content`) VALUES ('3공지사항', '3내용');
@@ -18,4 +19,29 @@ INSERT INTO `myworkout`.`notice` (`nt_title`, `nt_content`) VALUES ('17공지사
 INSERT INTO `myworkout`.`notice` (`nt_title`, `nt_content`) VALUES ('18공지사항', '18내용');
 INSERT INTO `myworkout`.`notice` (`nt_title`, `nt_content`) VALUES ('19공지사항', '19내용');
 INSERT INTO `myworkout`.`notice` (`nt_title`, `nt_content`) VALUES ('20공지사항', '20내용');
-INSERT INTO `myworkout`.`notice` (`nt_title`) VALUES ('21공지사항');
+INSERT INTO `myworkout`.`notice` (`nt_title`, `nt_content`) VALUES ('21공지사항', '21내용');
+
+# 자유게시판 데이터
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목1', '내용1');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목2', '내용2');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목3', '내용3');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목4', '내용4');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목5', '내용5');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목6', '내용6');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목7', '내용7');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목8', '내용8');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목9', '내용9');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목10', '내용10');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목11', '내용11');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목12', '내용12');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목13', '내용13');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목14', '내용14');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목15', '내용15');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목16', '내용16');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목17', '내용17');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목18', '내용18');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목19', '내용19');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목20', '내용20');
+INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('제목21', '내용21');
+
+

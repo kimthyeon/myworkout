@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -35,14 +35,14 @@
 
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2 link-secondary" href="#">공지사항</a>
+            <a class="p-2 link-secondary" th:href="@{/notice/list}">공지사항</a>
             <a class="p-2 link-secondary" href="#">가슴</a>
             <a class="p-2 link-secondary" href="#">등</a>
             <a class="p-2 link-secondary" href="#">하체</a>
             <a class="p-2 link-secondary" href="#">팔</a>
             <a class="p-2 link-secondary" href="#">어깨</a>
             <a class="p-2 link-secondary" href="#">맨몸</a>
-            <a class="p-2 link-secondary" href="#">자유게시판</a>
+            <a class="p-2 link-secondary" th:href="@{/freeboard/list}">자유게시판</a>
         </nav>
     </div>
 </div>
