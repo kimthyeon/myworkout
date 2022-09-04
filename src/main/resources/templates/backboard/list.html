@@ -1,5 +1,3 @@
-<!--기본 템플릿-->
-
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -16,27 +14,6 @@
   <!-- Custom styles for this template -->
   <link href="/css/blog.css" rel="stylesheet">
 </head>
-<style>
-
-  .layout {
-    width : 1000px;
-    margin : 0 auto;
-    margin-top : 40px;
-  }
-
-  .layout input {
-    width : 100%;
-    box-sizing : border-box;
-  }
-
-  .layout textarea {
-    width : 100%;
-    margin-top : 10px;
-    min-height : 300px;
-  }
-
-
-</style>
 <body>
 <div class="container">
   <header class="blog-header py-3">
@@ -59,33 +36,77 @@
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 link-secondary" th:href="@{/notice/list}">공지사항</a>
-      <a class="p-2 link-secondary" href="#">가슴</a>
-      <a class="p-2 link-secondary" href="#">등</a>
-      <a class="p-2 link-secondary" href="#">하체</a>
-      <a class="p-2 link-secondary" href="#">팔</a>
-      <a class="p-2 link-secondary" href="#">어깨</a>
-      <a class="p-2 link-secondary" href="#">맨몸</a>
-      <a class="p-2 link-secondary" href="#">자유게시판</a>
+      <a class="p-2 link-secondary" th:href="@{/chestboard/list}">가슴</a>
+      <a class="p-2 link-secondary" th:href="@{/backboard/list}">등</a>
+      <a class="p-2 link-secondary" th:href="@{/legboard/list}">하체</a>
+      <a class="p-2 link-secondary" th:href="@{/armboard/list}">팔</a>
+      <a class="p-2 link-secondary" th:href="@{/shoulderboard/list}">어깨</a>
+      <a class="p-2 link-secondary" th:href="@{/streetboard/list}">맨몸</a>
+      <a class="p-2 link-secondary" th:href="@{/freeboard/list}">자유게시판</a>
     </nav>
   </div>
 </div>
 
 <main class="container">
+  <h2 class="text-center">등 게 시 판</h2>
 
-  <h2 class="text-center">공 지 사 항</h2>
-
-  <div class="layout">
-      <input type="text" name="nttitle" th:value="${notice.nttitle}" readonly>
-      <textarea th:text="${notice.ntcontent}" readonly></textarea>
+  <div class="float-end">
+    <form class="row g-3" th:action="@{/backboard/list}" method="get">
+      <div class="col-auto">
+        <label for="searchTitle" class="visually-hidden">검색</label>
+        <input type="text" class="form-control" id="searchTitle" name="searchTitle" placeholder="검색어 입력">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-secondary mb-3">검색</button>
+      </div>
+    </form>
   </div>
 
-  <div class="d-grid gap-2 d-md-block">
-    <div class="text-center">
-        <a class="btn btn-primary" type="button" th:href="@{/notice/view/{id}(id = ${notice.id - 1})}">이전글</a>
-        <a class="btn btn-primary" type="button" th:href="@{/notice/list}">목록으로</a>
-        <a class="btn btn-primary" type="button" th:href="@{/notice/view/{id}(id = ${notice.id + 1})}">다음글</a>
-    </div>
+
+  <table class="table table-striped">
+
+    <thead class="text-center">
+    <tr>
+      <th scope="col" style="width: 50%;">제목</th>
+      <th scope="col" style="width: 30%;">작성일</th>
+      <th scope="col" style="width: 20%;">조회수</th>
+    </tr>
+    </thead>
+
+    <tbody class="text-center">
+    <tr th:each="backBoards : ${backBoards}">
+      <td>
+        <a th:text="${backBoards.batitle}" th:href="@{/backboard/view/{id}(id = ${backBoards.id})}">
+          Mark
+        </a>
+      </td>
+      <td>작성일</td>
+      <td>-</td>
+    </tr>
+    </tbody>
+
+  </table>
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btn btn-secondary" type="button" th:href="@{/backboard/write}">글쓰기</a>
   </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" th:classappend="${1 == backBoards.pageable.pageNumber + 1} ? 'disabled'">
+        <a class="page-link" th:href="@{/backboard/list(page=${backBoards.pageable.pageNumber - 1}, searchTitle=${param.searchTitle})}">Previous</a>
+      </li>
+      <li class="page-item" th:classappend="${i == backBoards.pageable.pageNumber + 1} ? 'disabled'" th:each="i : ${#numbers.sequence(startPage, endPage)}">
+        <a class="page-link" th:href="@{/backboard/list(page=${i - 1}, searchTitle=${param.searchTitle})}" th:text="${i}">
+          1
+        </a>
+      </li>
+      <li class="page-item" th:classappend="${backBoards.totalPages == backBoards.pageable.pageNumber + 1} ? 'disabled'">
+        <a class="page-link" href="#" th:href="@{/backboard/list(page=${backBoards.pageable.pageNumber + 1}, searchTitle=${param.searchTitle})}">Next</a>
+      </li>
+    </ul>
+  </nav>
+
 
 </main>
 
