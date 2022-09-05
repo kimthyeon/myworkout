@@ -53,3 +53,14 @@ CREATE TABLE `myworkout`.`freeboard` (
                                          `fr_content` VARCHAR(300) NULL,
                                          PRIMARY KEY (`id`));
 
+# 유저
+CREATE TABLE `myworkout`.`user` (
+                                    `id` INT NOT NULL AUTO_INCREMENT,
+                                    `user_id` VARCHAR(45) NOT NULL,
+                                    `user_pw` VARCHAR(45) NOT NULL,
+                                    `user_name` VARCHAR(45) NOT NULL,
+                                    `user_phone` VARCHAR(45) NOT NULL,
+                                    `admin` INT NOT NULL,
+                                    PRIMARY KEY (`id`));
+
+
