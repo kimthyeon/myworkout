@@ -182,5 +182,21 @@ INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('자유�
 INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('자유제목20', '자유내용20');
 INSERT INTO `myworkout`.`freeboard` (`fr_title`, `fr_content`) VALUES ('자유제목21', '자유내용21');
 
+# 관리자 데이터
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('관리자', '123456', '관리자', '01012345678', '1');
+# 일반회원 데이터
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원1', '123456', '회원이름1', '01012345678', '0');
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원2', '123456', '회원이름2', '01012345678', '0');
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원3', '123456', '회원이름3', '01012345678', '0');
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원4', '123456', '회원이름4', '01012345678', '0');
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원5', '123456', '회원이름5', '01012345678', '0');
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원6', '123456', '회원이름6', '01012345678', '0');
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원7', '123456', '회원이름7', '01012345678', '0');
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원8', '123456', '회원이름8', '01012345678', '0');
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원9', '123456', '회원이름9', '01012345678', '0');
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원10', '123456', '회원이름10', '01012345678', '0');
+INSERT INTO `myworkout`.`user` (`user_id`, `user_pw`, `user_name`, `user_phone`, `admin`) VALUES ('일반회원11', '123456', '회원이름11', '01012345678', '0');
+
+
 
 

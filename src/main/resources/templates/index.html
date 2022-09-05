@@ -24,10 +24,27 @@
             <div class="col-4 text-center">
                 <a class="blog-header-logo text-dark" th:href="@{/}">오.운.완</a>
             </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
-                <a class="btn btn-sm btn-outline-secondary" th:href="@{/account/login}">로그인</a>
-                <a class="btn btn-sm btn-outline-secondary" th:href="@{/account/register}">회원가입</a>
-            </div>
+<!--            로그인 전-->
+            <th:block th:if="${session.id == null}">
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="btn btn-sm btn-outline-secondary" th:href="@{/account/login}">로그인</a>
+                    <a class="btn btn-sm btn-outline-secondary" th:href="@{/account/register}">회원가입</a>
+                </div>
+            </th:block>
+<!--            로그인 후(관리자)-->
+            <th:block th:if="${session.admin == 1}">
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="btn btn-sm btn-outline-secondary" th:href="@{/admin/main}" th:text="${session.userid}">관리자</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#" th:href="@{/account/logout}">로그아웃</a>
+                </div>
+            </th:block>
+<!--            로그인 후(일반회원)-->
+            <th:block th:if="${session.id != null}">
+                <div class="col-4 d-flex justify-content-end align-items-center" th:if="${session.admin != 1}">
+                    <a class="btn btn-sm btn-outline-secondary" th:href="@{/user/main}" th:text="${session.userid}">유저</a>
+                    <a class="btn btn-sm btn-outline-secondary" th:href="@{/account/logout}">로그아웃</a>
+                </div>
+            </th:block>
         </div>
     </header>
 

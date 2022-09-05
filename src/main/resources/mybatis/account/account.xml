@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kan.myworkout.mapper.account.AccountMapper">
+
+    <!--    아이디, 비밀번호에 해당되는게 카운트 될 때 로그인.-->
+    <select id="login" parameterType="hashmap" resultType="int">
+        select count(*) from user
+        where user_id=#{userid}
+          and user_pw=#{userpw}
+    </select>
+
+    <select id="admin" resultType="int" parameterType="string">
+        select admin from user where user_id = #{userid}
+    </select>
+
+    <select id="getid" resultType="int" parameterType="hashmap">
+        select id from user where user_id = #{userid}
+    </select>
+</mapper>

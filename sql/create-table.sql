@@ -8,7 +8,7 @@ CREATE TABLE `myworkout`.`notice` (
 CREATE TABLE `myworkout`.`chestboard` (
                                          `id` INT NOT NULL AUTO_INCREMENT,
                                          `ch_title` VARCHAR(100) NOT NULL,
-                                         `c_content` VARCHAR(300) NOT NULL,
+                                         `ch_content` VARCHAR(300) NOT NULL,
                                          PRIMARY KEY (`id`));
 
 # 등 게시판
