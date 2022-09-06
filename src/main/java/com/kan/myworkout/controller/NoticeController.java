@@ -9,10 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/notice")
@@ -41,5 +38,20 @@ public class NoticeController {
         Notice notice = noticeRepository.findById(id).get();
         model.addAttribute("notice", notice);
         return "notice/view";
+    }
+
+    @GetMapping("/register")
+    public String noticeRegisterView() {
+        return "notice/register";
+    }
+
+    @PostMapping("/register")
+    public String noticeRegister(Notice notice, Model model) {
+
+        noticeRepository.save(notice);
+
+        model.addAttribute("message", "공지사항 등록 완료!");
+        model.addAttribute("searchUrl", "/notice/list");
+        return "message";
     }
 }
